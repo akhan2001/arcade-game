@@ -1,0 +1,87 @@
+image: debian
+
+stages:
+  - check
+  - testing
+  - building
+  - deploy
+  - postdeploy
+
+linting PHP:
+  stage: check
+  image: php:8.3-rc-cli
+  script:
+    - php -v
+    - php -l *.php
+  allow_failure: true
+
+linting JavaScript:
+  stage: check
+  image: node:latest
+  script:
+    - node -v
+    - npx eslint ./js/*.js
+    # Using .eslintrc.yml for ESLint configuration
+  allow_failure: true
+
+testing PHP:
+  stage: testing
+  image: pipelinecomponents/phpunit
+  script:
+    - echo 'Testing PHP'
+    - phpunit __test__/TestSite.php
+  allow_failure: false
+
+testing JAVASCRIPT(POST-DEPLOYMENT):
+  stage: postdeploy
+  image: node:latest
+  before_script:
+  - apt-get update -qq
+  - apt-get install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3
+    libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4
+    libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1
+    libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6
+    ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+  - apt-get install -y libgbm-dev
+  script:
+    - echo 'Testing JavaScript after deployment'
+    - npm install jest --global
+    - npm install puppeteer
+    - npm install jest-environment-jsdom
+    - jest post --verbose
+  allow_failure: false
+
+testing JAVASCRIPT:
+  stage: testing
+  image: node:latest
+  script:
+    - echo 'Testing JAVASCRIPT'
+    - npm install jest --global
+    - npm install jest-environment-jsdom
+    - npm install jest-canvas-mock
+    - npm install jest-fetch-mock
+    - jest pre --verbose
+  allow_failure: false
+
+building website:
+  stage: building
+  script:
+    - echo 'Building website...'
+    - apt-get update -qy
+    - apt-get install -y sshpass
+  allow_failure: false
+
+deploying website:
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y openssh-client
+    - eval "$(ssh-agent -s)"
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    
+    
+  script:
+    - echo 'Deploying website'
+    - shopt -s extglob
+    - scp -o StrictHostKeyChecking=no -P "$SSH_PORT" -r ./!(.git) "$SSH_USER@$SSH_HOST:$DEPLOY_DIR"
+    

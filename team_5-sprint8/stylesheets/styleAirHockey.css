@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    background-color: hsl(200, 50%, 70%);
+}
+
+canvas {
+    background-color: hsl(0,100%,100%);
+    margin-top: 32px;
+    border-style: solid;
+} */
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #f0f0f0;
+    overflow: hidden;
+}
+canvas {
+	border: 1px solid #000;
+	background-color: #fff;
+}
+.navbar {
+	background-color: #000105;
+}
+.game-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.background_section {
+    height: 100%;
+	background: black;
+}
+.background_section img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+	opacity: 0.50;
+}
+.play-game-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #1e70db;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#airHockeyModal {
+    overflow: hidden;
+}
+#airHockeyGameCanvas {
+    border-radius: 60px;
+    background-color: #c7d1d9;
+    padding: 5px 0;
+}
+.modal-dialog {
+    margin: 30px auto;
+}
+.modal-content {
+    align-items: center;
+    overflow: hidden;
+}
+.modal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #021022;
+    color: white;
+}
+.btn-close {
+    margin-left: auto;
+    filter: invert();
+}
+#airHockeyGameCanvas {
+    width: 100%;
+    border: none;
+}

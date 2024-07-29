@@ -1,0 +1,1 @@
+Cant go from snake game page to leaderboard page -- Status: open

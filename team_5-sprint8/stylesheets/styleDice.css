@@ -1,0 +1,23 @@
+body {
+	background-color: #000000; 
+	background-image: url("https://sukeban.moe/wp-content/uploads/2021/08/blackbg.png"); 
+	background-position: left top; 
+	background-size: auto; 
+	background-repeat: repeat; 
+	background-attachment: fixed;
+}
+
+.modalCustom {
+    z-index: 1050;
+}
+.modalCustom-content {
+    background-color: #000000c1; /*was #0e000a*/
+}
+.modalCustom-header {
+    background-color: #020511;
+    color: #fff;
+}
+
+.btn-close {
+    filter: invert(1);
+}

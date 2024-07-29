@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set the height of the html and body to 100vh */
+    overflow: hidden; /* Prevent scrolling */
+    text-align: center;
+}
+.navbar {
+	background-color: #000105;
+}
+.game-container {
+    height: 100vh;
+    width: 100%; /* Set the width to 100% of the parent */
+    position: relative; /* Relative positioning for positioning children absolutely */
+    overflow: hidden; /* Prevent scrolling inside the section */
+}
+.background_section {
+    height: 100%;
+	background: black;
+}
+.background_section img {
+    width: 100%;
+    height: 100vh; /* Set the height to 100vh */
+    object-fit: cover; /* Cover the whole area without stretching */
+    position: absolute;
+    top: 0;
+    left: 0;
+	opacity: 0.75;
+}
+.canvas {
+	height: 600px; /* Height of the canvas, same as width for 1:1 aspect ratio */
+    background-color: #004d00; /* Dark green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+canvas#snakeGame {
+    width: 100%;
+    height: 100%;
+    background-color: #004d00; /* Dark green canvas background */
+}
+#snakeGameCanvas {
+    width: 100%;
+    height: auto;
+    background-color: #010003;
+}
+.modal {
+    z-index: 1050;
+}
+.modal-content {
+    background-color: #c1c1c1c1; /*was #0e000a*/
+}
+.modal-header {
+    background-color: #020511;
+    color: #fff;
+}
+.btn-close {
+    filter: invert(1);
+}
+.play-game-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+#restartGameBtn {
+    display: none;
+}
+
+#logScoreBtn {
+    display: none;
+}
+
+#username {
+    display: none;
+}
+
+#confirmation {
+    display: none;
+}
+

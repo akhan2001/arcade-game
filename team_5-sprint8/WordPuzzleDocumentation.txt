@@ -1,0 +1,28 @@
+Design Choices for the Word Puzzle Game Integration
+
+Development Process:
+
+The integration of the word puzzle game into our website follows a scavenger hunt theme, designed to engage users in a multi-step puzzle that spans across several games hosted on our site.
+The process will begin with identifying key interaction points within our existing games (Snake, Air Hockey, Memory Game) where we could seamlessly introduce clues without disrupting the user experience.
+Each clue is strategically placed to guide players from one game to the next, leading in the discovery of a secret page.
+
+
+Design Decisions:
+
+- Clues were integrated in a manner that feels natural within the context of each game. For the Snake game, reaching a certain score reveals a console.log message with a 
+clue pointing to the Air Hockey game.
+- For the Air Hockey game, a clue is given when the player has hit a hat-trick. The screen will display "Hat Trick!!!" while highlighting the letters 'c' and 't' for the word "secret"
+- The final clue within the Memory Game is going to be designed to reveal upon a certain pattern being clicked by the user before playing the game.
+- The chosen words and hints all relate to a theme of  for our site exploration. The final "prize word" is designed to be a hyperlink text that will send it to a possible meme.
+
+User Instructions:
+
+- Starting Point: Begin by playing the Snake game. Aim for a high score to uncover the first clue.
+- Follow the Clues: Stay alert for clues hidden within console messages, specific game instructions, and unique completion screens. These hints are your guide to the next stage of the game sequence.
+- Engage with Each Game: Each clue is designed to be discovered through active participation in the games. Explore, play, and solve the challenges presented to you.
+- Document Your Journey: Maintain a record of all discovered clues and hints. These pieces are essential for solving the overarching puzzle.
+- Uncover the Secret Page: Use the clues from each game to piece together the path to the secret page. The final word puzzle will be your key to unlocking this hidden content.
+
+Preparation for Collaboration in Sprint 6:
+
+...

@@ -1,0 +1,39 @@
+﻿Game Ideas
+
+
+* Arcade games
+   * A website full of arcade-like minigames:
+      * Shooter
+      * Runner game(e.g. Subway surfers)
+      * Racing
+      * Tetris
+      * Snake
+      * Pong
+      * Air hockey
+      * Pinball
+      * Simulators
+      * Bowling
+   * This might be the best idea as arcade games won't be too hard to make, and we can have a platform that has multiple arcade games
+   * We can have leaderboards, so players can get high scores and compete with one another. Let’s us create a sign-in system and save scores in a database, both fairly simple and will please Greg
+   * There are alot of various options for arcade games that we can decently implement in the time frame we have and create multiple quality games.
+* Roguelike dungeon roaming game
+   * This could be very interesting, but it might take too long to create a roguelike that is actually good
+   * Pretty easy to expand as we can start with just a single level with only a few stats/items but can expand to a large game throughout the weeks
+* Idle Game
+   * Cookie Clicker-esque
+   * Simple but infinitely expandable
+* Board game
+   * Board games such as sorry, risk, monopoly, code names, etc.
+   * Could get very complicated to program
+* Story game - text based with images
+   * Just an idea. Simple, but doesnt seem too interesting, and I don't know how much we could do with it
+* Crossword game
+   * This game can be expanded upon to include a crossword maker to allow the user to make their own levels to share with friends
+* Parkour Puzzle Game
+   * Can start very simple and added upon through more intricate mechanics such as wind, grabbing surfaces, double jumps, etc
+
+
+
+
+* Collectible Game
+   * Have a website with hard to reach pages that each add a “collectible” to the users profile that they can see. They can also see which ones they do not have.
